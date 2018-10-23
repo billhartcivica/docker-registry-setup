@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  docker-registry:
+    image: docker.io/registry:latest
+    ports:
+      - 80:8000
+    restart: always
+    environment:
+      - REGISTRY_STORAGE=s3
+      - REGISTRY_STORAGE_S3_REGION=us-east-1
+      - REGISTRY_STORAGE_S3_BUCKET=maven-s3-bucket
+      - REGISTRY_STORAGE_S3_ACCESSKEY=XXXXXXXXXXXXXXXXXXXX
+      - REGISTRY_STORAGE_S3_SECRETKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
